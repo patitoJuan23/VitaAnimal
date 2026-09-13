@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VitaAnimal - Clínica Veterinaria Especializada & Asistente Virtual</title>
+  <meta name="description" content="Clínica veterinaria especializada con atención 24/7, tecnología avanzada y Asistente Virtual Guiado para evaluación médica preventiva de tu mascota.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/logo.png">
+</head>
+<body>
+
+  <!-- ==================== HEADER & NAVIGATION ==================== -->
+  <header class="navbar">
+    <div class="container">
+      <a href="#" class="nav-brand">
+        <img src="assets/logo.png" alt="VitaAnimal Logo">
+        <span>Vita<span class="highlight">Animal</span></span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#inicio" class="nav-link active">Inicio</a></li>
+          <li><a href="#nosotros" class="nav-link">Sobre Nosotros</a></li>
+          <li><a href="#servicios" class="nav-link">Servicios</a></li>
+          <li><a href="#equipo" class="nav-link">Equipo Médico</a></li>
+          <li><a href="#contacto" class="nav-link">Contacto & Citas</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" title="Cambiar tema claro/oscuro" aria-label="Cambiar tema">
+          <span id="themeIcon">🌙</span>
+        </button>
+        <a href="#contacto" class="btn btn-primary">Agendar Cita</a>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú de navegación">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section class="hero" id="inicio">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span>🐾 Asistencia Veterinaria Inteligente 24/7</span>
+        </div>
+        <h1 class="hero-title">Cuidado profesional y amoroso para tu <span>mascota</span></h1>
+        <p class="hero-description">
+          En VitaAnimal combinamos medicina veterinaria de vanguardia con un trato cálido y personalizado. Prueba nuestro <strong>Asistente Médico Guiado</strong> en la esquina inferior derecha para una evaluación preventiva inmediata.
+        </p>
+        <div class="hero-cta">
+          <a href="#contacto" class="btn btn-primary">📅 Agendar Cita Médica</a>
+          <button class="btn btn-outline" onclick="document.getElementById('chatTrigger').click();">💬 Consultar al Asistente Bot</button>
+        </div>
+      </div>
+
+      <div class="hero-image-wrapper">
+        <img src="assets/hero-bg.jpg" alt="Veterinaria con perro feliz en VitaAnimal" class="hero-image">
+        <div class="hero-floating-card">
+          <span class="icon">🏥</span>
+          <div class="info">
+            <strong>Atención de Urgencias 24/7</strong>
+            <span>Equipo médico siempre de guardia</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT US SECTION ==================== -->
+  <section class="section-padding" id="nosotros">
+    <div class="container about-grid">
+      <div class="about-image-wrapper">
+        <img src="assets/hero-bg.jpg" alt="Instalaciones VitaAnimal" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+      </div>
+
+      <div class="about-content">
+        <div class="section-title" style="text-align: left; margin-bottom: 1.5rem;">
+          <span>Nuestra Filosofía</span>
+          <h2>Más de 12 años protegiendo la salud de tu familia peluda</h2>
+        </div>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem;">
+          En <strong>VitaAnimal</strong> entendemos que tu mascota no es solo un animal de compañía: es un miembro fundamental de tu familia. Fundada en 2014, nuestra clínica cuenta con quirófanos de alta complejidad, diagnóstico por imagen y laboratorio clínico propio.
+        </p>
+        <p style="color: var(--text-secondary);">
+          Nos especializamos tanto en medicina canina y felina como en la atención diferenciada de animales exóticos y aves, ofreciendo protocolos de manejo <em>Cat-Friendly</em> e instalaciones libres de estrés.
+        </p>
+
+        <div class="about-features">
+          <div class="feature-card">
+            <div class="icon">⚡</div>
+            <h4>Diagnóstico Rápido</h4>
+            <p>Laboratorio interno con resultados en minutos.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🛡️</div>
+            <h4>Medicina Preventiva</h4>
+            <p>Plan integral de vacunación y nutrición.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🏥</div>
+            <h4>Hospitalización 24/7</h4>
+            <p>Monitoreo continuo en UCI veterinaria.</p>
+          </div>
+          <div class="feature-card">
+            <div class="icon">🤖</div>
+            <h4>Triage Digital</h4>
+            <p>Chatbot guiado con semáforo de urgencias.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== SERVICES SECTION ==================== -->
+  <section class="section-padding services" id="servicios">
+    <div class="container">
+      <div class="section-title">
+        <span>Servicios Integrales</span>
+        <h2>Todo lo que tu compañero necesita en un solo lugar</h2>
+        <p>Desde revisiones rutinarias hasta intervenciones quirúrgicas de alta especialidad.</p>
+      </div>
+
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🩺</div>
+          <h3>Consulta General & Especializada</h3>
+          <p>Evaluación clínica completa, medicina interna, dermatología, gastroenterología y neurología veterinaria.</p>
+          <span class="badge">Atención Presencial</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">💉</div>
+          <h3>Vacunación & Desparasitación</h3>
+          <p>Planes biológicos actualizados según la edad y estilo de vida de perros, gatos y especies pequeñas.</p>
+          <span class="badge">Preventivo</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🔬</div>
+          <h3>Cirugía & Rayos X Digital</h3>
+          <p>Quirófano equipado con anestesia inhalatoria, ecografía Doppler y monitoreo multiparámetro en tiempo real.</p>
+          <span class="badge">Alta Tecnología</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🚨</div>
+          <h3>Urgencias & Cuidados Intensivos</h3>
+          <p>Atención médica inmediata las 24 horas para traumatismos, intoxicaciones u obstrucciones agudas.</p>
+          <span class="badge">Disponibilidad 24/7</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">✂️</div>
+          <h3>Peluquería & Estética Canina/Felina</h3>
+          <p>Baños medicados, cortes higiénicos, corte de uñas y cuidado dermatológico con estilistas capacitados.</p>
+          <span class="badge">Spa Mascota</span>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🦜</div>
+          <h3>Medicina de Animales Exóticos</h3>
+          <p>Atención especializada para aves, conejos, cobayas, reptiles y pequeñas especies no convencionales.</p>
+          <span class="badge">Especialidad</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== VETERINARY TEAM ==================== -->
+  <section class="section-padding" id="equipo">
+    <div class="container">
+      <div class="section-title">
+        <span>Cuerpo Médico</span>
+        <h2>Especialistas apasionados por la salud animal</h2>
+        <p>Profesionales colegiados con amplia trayectoria en medicina interna y cirugía.</p>
+      </div>
+
+      <div class="team-grid">
+        <div class="team-card">
+          <img src="assets/vet-1.jpg" alt="Dra. Elena Gómez">
+          <div class="team-info">
+            <h3>Dra. Elena Gómez</h3>
+            <div class="role">Directora Médica & Cirugía General</div>
+            <p>Especialista en cirugía de tejidos blandos con más de 14 años de experiencia clínica.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <img src="assets/vet-2.jpg" alt="Dr. Carlos Mendoza">
+          <div class="team-info">
+            <h3>Dr. Carlos Mendoza</h3>
+            <div class="role">Medicina Interna & Traumatología</div>
+            <p>Experto en ortopedia veterinaria y atención de emergencias críticas 24/7.</p>
+          </div>
+        </div>
+
+        <div class="team-card">
+          <img src="assets/vet-3.jpg" alt="Dra. Sofía Ramos">
+          <div class="team-info">
+            <h3>Dra. Sofía Ramos</h3>
+            <div class="role">Especialista Felina & Exóticos</div>
+            <p>Certificada en conducta felina Cat-Friendly y manejo de aves y mamíferos pequeños.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT & APPOINTMENT FORM ==================== -->
+  <section class="section-padding contact" id="contacto">
+    <div class="container">
+      <div class="section-title">
+        <span>Contacto & Agendamiento</span>
+        <h2>Estamos listos para atender a tu mascota</h2>
+        <p>Reserva tu cita médica presencial o comunícate directamente con nuestro equipo.</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="icon">📍</div>
+            <div>
+              <h4>Ubicación de la Clínica</h4>
+              <p>Av. Primavera 1045, San Borja / Miraflores</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon">📞</div>
+            <div>
+              <h4>Central Telefónica & WhatsApp</h4>
+              <p>(01) 800-VITA-911 | +51 987 654 321</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon">⏰</div>
+            <div>
+              <h4>Horarios de Atención</h4>
+              <p>Consultas: Lun - Sáb: 8:00 am - 8:00 pm<br>Urgencias Médicas: Abierto 24 Horas / 365 días</p>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="icon">✉️</div>
+            <div>
+              <h4>Correo Electrónico</h4>
+              <p>contacto@vitaanimal.com | citas@vitaanimal.com</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Appointment Form -->
+        <div class="appointment-form-card">
+          <h3>📅 Agendar Cita Presencial</h3>
+          <form id="appointmentForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombreCliente">Tu Nombre Completo *</label>
+                <input type="text" id="nombreCliente" class="form-control" placeholder="Ej. María García" required>
+              </div>
+              <div class="form-group">
+                <label for="telefono">Teléfono / WhatsApp *</label>
+                <input type="tel" id="telefono" class="form-control" placeholder="Ej. 999 888 777" required>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="nombreMascota">Nombre de tu Mascota *</label>
+                <input type="text" id="nombreMascota" class="form-control" placeholder="Ej. Toby / Michi" required>
+              </div>
+              <div class="form-group">
+                <label for="especie">Tipo de Mascota</label>
+                <select id="especie" class="form-control">
+                  <option value="Perro">Perro 🐶</option>
+                  <option value="Gato">Gato 🐱</option>
+                  <option value="Ave / Exótico">Ave / Exótico 🦜</option>
+                  <option value="Otro">Otro 🐾</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="fechaCita">Fecha Deseada *</label>
+              <input type="date" id="fechaCita" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+              <label for="motivoCita">Motivo o Síntomas (Opcional)</label>
+              <input type="text" id="motivoCita" class="form-control" placeholder="Ej. Vacunación, consulta recomendada por el chatbot...">
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">Confirmar Solicitud de Cita</button>
+            <div id="formFeedback" style="display: none;"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <img src="assets/logo.png" alt="VitaAnimal Logo" style="width: 40px; height: 40px; border-radius: 50%;">
+            <h3 style="margin: 0;">VitaAnimal</h3>
+          </div>
+          <p>Comprometidos con el bienestar, salud y felicidad de tus mascotas mediante innovación médica y vocación de servicio.</p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Navegación</h4>
+          <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#nosotros">Sobre Nosotros</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#equipo">Equipo Médico</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Servicios</h4>
+          <ul>
+            <li><a href="#servicios">Urgencias 24h</a></li>
+            <li><a href="#servicios">Vacunación</a></li>
+            <li><a href="#servicios">Odontología</a></li>
+            <li><a href="#servicios">Exóticos</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-links">
+          <h4>Legal & Asistencia</h4>
+          <ul>
+            <li><a href="#contacto">Contacto</a></li>
+            <li><a href="#" onclick="document.getElementById('chatTrigger').click(); return false;">Chatbot Guiado</a></li>
+            <li><a href="#">Términos del Servicio</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 VitaAnimal Clínica Veterinaria S.A.C. Sitio web estático optimizado para GitHub Pages.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== FLOATING CHATBOT WIDGET ==================== -->
+  <div class="chat-widget">
+    <!-- Floating Trigger Button -->
+    <button class="chat-trigger" id="chatTrigger" title="Abrir Asistente Virtual" aria-label="Abrir Asistente Virtual">
+      💬
+      <span class="badge-dot" id="badgeDot"></span>
+    </button>
+
+    <!-- Chat Window Modal -->
+    <div class="chat-window" id="chatWindow">
+      <!-- Header -->
+      <div class="chat-header">
+        <div class="chat-header-info">
+          <img src="assets/logo.png" alt="Bot Avatar" class="chat-avatar">
+          <div class="chat-header-title">
+            <h4>Asistente VitaAnimal</h4>
+            <div class="chat-status">Triage Guiado en Línea</div>
+          </div>
+        </div>
+        <div class="chat-actions">
+          <button class="chat-btn-icon" id="chatReset" title="Reiniciar consulta">🔄</button>
+          <button class="chat-btn-icon" id="chatClose" title="Cerrar chat">✕</button>
+        </div>
+      </div>
+
+      <!-- Messages Body -->
+      <div class="chat-messages" id="chatMessages">
+        <!-- Messages dynamically rendered via js/chatbot.js -->
+      </div>
+
+      <!-- Interactive Options Area -->
+      <div class="chat-options-wrapper" id="chatOptions">
+        <!-- Option buttons dynamically rendered via js/chatbot.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/chatbot-data.js"></script>
+  <script src="js/chatbot.js"></script>
+</body>
+</html>

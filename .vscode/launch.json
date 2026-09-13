@@ -1,0 +1,26 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "pwa-msedge",
+            "request": "launch",
+            "name": "Abrir VitaAnimal en Microsoft Edge",
+            "file": "${workspaceFolder}/index.html",
+            "runtimeExecutable": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
+        },
+        {
+            "type": "chrome",
+            "request": "launch",
+            "name": "Abrir VitaAnimal en Chrome",
+            "file": "${workspaceFolder}/index.html",
+            "runtimeExecutable": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
+        },
+        {
+            "name": "Iniciar Servidor Local Python (Puerto 8000)",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "http.server",
+            "args": ["8000"]
+        }
+    ]
+}
