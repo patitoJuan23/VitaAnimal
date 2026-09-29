@@ -27,6 +27,7 @@
           <li><a href="#inicio" class="nav-link active">Inicio</a></li>
           <li><a href="#nosotros" class="nav-link">Sobre Nosotros</a></li>
           <li><a href="#servicios" class="nav-link">Servicios</a></li>
+          <li><a href="#mascotas" class="nav-link">Mis Mascotas</a></li>
           <li><a href="#equipo" class="nav-link">Equipo Médico</a></li>
           <li><a href="#contacto" class="nav-link">Contacto & Citas</a></li>
         </ul>
@@ -36,6 +37,9 @@
         <button class="theme-toggle" id="themeToggle" title="Cambiar tema claro/oscuro" aria-label="Cambiar tema">
           <span id="themeIcon">🌙</span>
         </button>
+        <div id="userNavSection">
+          <button class="btn btn-outline" id="openLoginBtn" style="padding: 0.5rem 1rem; font-size: 0.9rem;">🔑 Iniciar Sesión</button>
+        </div>
         <a href="#contacto" class="btn btn-primary">Agendar Cita</a>
         <button class="mobile-toggle" id="mobileToggle" aria-label="Abrir menú de navegación">☰</button>
       </div>
@@ -212,6 +216,29 @@
     </div>
   </section>
 
+  <!-- ==================== PET MANAGEMENT SECTION ==================== -->
+  <section class="section-padding" id="mascotas" style="background-color: var(--bg-surface);">
+    <div class="container">
+      <div class="section-title">
+        <span>Gestión de Pacientes</span>
+        <h2>Mis Mascotas Registradas</h2>
+        <p>Añade y revisa la ficha médica rápida de tus compañeros para agilizar tus consultas.</p>
+      </div>
+
+      <div class="pet-actions-bar" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; flex-wrap: wrap; gap: 1rem;">
+        <div class="pet-status-info" id="petStatusText" style="color: var(--text-secondary); font-weight: 500;">
+          💡 Regístrate o añade tus mascotas para guardarlas en tu sesión actual.
+        </div>
+        <button class="btn btn-primary" id="openAddPetModalBtn">🐾 + Añadir Mascota</button>
+      </div>
+
+      <!-- Grid of Pets -->
+      <div class="pets-grid" id="petsGrid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem;">
+        <!-- Dynamically populated or default demo pets -->
+      </div>
+    </div>
+  </section>
+
   <!-- ==================== CONTACT & APPOINTMENT FORM ==================== -->
   <section class="section-padding contact" id="contacto">
     <div class="container">
@@ -227,7 +254,7 @@
             <div class="icon">📍</div>
             <div>
               <h4>Ubicación de la Clínica</h4>
-              <p>Av. Primavera 1045, San Borja / Miraflores</p>
+              <p>Calle 77 Sur #45-12, La Estrella, Antioquia</p>
             </div>
           </div>
 
@@ -235,7 +262,7 @@
             <div class="icon">📞</div>
             <div>
               <h4>Central Telefónica & WhatsApp</h4>
-              <p>(01) 800-VITA-911 | +51 987 654 321</p>
+              <p>(604) 312-9000 | +57 300 123 4567</p>
             </div>
           </div>
 
@@ -267,7 +294,7 @@
               </div>
               <div class="form-group">
                 <label for="telefono">Teléfono / WhatsApp *</label>
-                <input type="tel" id="telefono" class="form-control" placeholder="Ej. 999 888 777" required>
+                <input type="tel" id="telefono" class="form-control" placeholder="Ej. 300 123 4567" required>
               </div>
             </div>
 
@@ -386,6 +413,76 @@
       <!-- Interactive Options Area -->
       <div class="chat-options-wrapper" id="chatOptions">
         <!-- Option buttons dynamically rendered via js/chatbot.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== LOGIN MODAL ==================== -->
+  <div class="custom-modal-overlay" id="loginModalOverlay">
+    <div class="custom-modal">
+      <div class="custom-modal-header">
+        <h3>🔑 Iniciar Sesión</h3>
+        <button class="modal-close-btn" id="closeLoginModalBtn">&times;</button>
+      </div>
+      <div class="custom-modal-body">
+        <p style="color: var(--text-secondary); margin-bottom: 1.2rem; font-size: 0.95rem;">
+          Ingresa con tu usuario y contraseña de prueba para acceder a tu panel. <em>(No se guarda ningún dato en servidor)</em>
+        </p>
+        <form id="loginForm">
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="loginUser">Usuario / Correo</label>
+            <input type="text" id="loginUser" class="form-control" placeholder="Ej. cliente@vitaanimal.com" required>
+          </div>
+          <div class="form-group" style="margin-bottom: 1.5rem;">
+            <label for="loginPass">Contraseña</label>
+            <input type="password" id="loginPass" class="form-control" placeholder="••••••••" required>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Ingresar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== ADD PET MODAL ==================== -->
+  <div class="custom-modal-overlay" id="addPetModalOverlay">
+    <div class="custom-modal">
+      <div class="custom-modal-header">
+        <h3>🐾 Añadir Nueva Mascota</h3>
+        <button class="modal-close-btn" id="closeAddPetModalBtn">&times;</button>
+      </div>
+      <div class="custom-modal-body">
+        <form id="addPetForm">
+          <div class="form-group" style="margin-bottom: 1rem;">
+            <label for="modalPetName">Nombre de la Mascota *</label>
+            <input type="text" id="modalPetName" class="form-control" placeholder="Ej. Max, Lucas, Pelusa" required>
+          </div>
+          <div class="form-row" style="margin-bottom: 1rem;">
+            <div class="form-group">
+              <label for="modalPetSpecies">Especie *</label>
+              <select id="modalPetSpecies" class="form-control" required>
+                <option value="Perro">Perro 🐶</option>
+                <option value="Gato">Gato 🐱</option>
+                <option value="Ave">Ave 🦜</option>
+                <option value="Exótico">Exótico 🐰</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="modalPetBreed">Raza / Tipo</label>
+              <input type="text" id="modalPetBreed" class="form-control" placeholder="Ej. Golden Retriever">
+            </div>
+          </div>
+          <div class="form-row" style="margin-bottom: 1.5rem;">
+            <div class="form-group">
+              <label for="modalPetAge">Edad</label>
+              <input type="text" id="modalPetAge" class="form-control" placeholder="Ej. 2 años">
+            </div>
+            <div class="form-group">
+              <label for="modalPetWeight">Peso (kg)</label>
+              <input type="text" id="modalPetWeight" class="form-control" placeholder="Ej. 8.5 kg">
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary" style="width: 100%;">Guardar Mascota</button>
+        </form>
       </div>
     </div>
   </div>
